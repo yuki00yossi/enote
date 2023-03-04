@@ -1,0 +1,87 @@
+#player {
+    box-sizing: border-box;
+    width: 65%;
+}
+
+#sidebar {
+    width: 15%;
+    float: left;
+    overflow-y: scroll;
+}
+
+.note-area {
+    box-sizing: border-box;
+    padding: .2rem .5rem;
+    cursor: pointer;
+    transition: all .2s 0s ease;
+}
+
+.note-area:hover {
+    background-color: rgba(0, 0, 0, .2);
+}
+
+#comment_area {
+    box-sizing: border-box;
+    width: 20%;
+    background-color: aliceblue;
+    float: right;
+    overflow-y: scroll;
+    padding: 1rem;
+}
+
+.comment {
+    box-sizing: border-box;
+    width: 100%;
+    /* background-color: green; */
+    padding: .5rem 1rem;
+    border-bottom: 1px solid gray;
+}
+
+.comment-title {
+    cursor: pointer;
+    display: block;
+    width: calc(100% - 10px);
+    min-height: 2rem;
+}
+
+.comment-body {
+    display: block;
+    overflow: hidden;
+    opacity: 0;
+    height: 0;
+    transition: all .5s 0s ease;
+}
+
+.show {
+    display: block;
+    opacity: 1;
+    height: auto;
+}
+
+.selected {
+    background-color: rgba(0, 0, 0, .2);
+}
+
+.title-area {
+    box-sizing: border-box;
+    width: 100%;
+    padding-left: 1rem;
+}
+
+.control_area {
+    width: 65%;
+    margin-left: 15%;
+}
+
+
+/* コメント登録モーダル */
+/* .modal-add-comment {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+    height: 70%;
+    background-color: azure;
+    box-shadow: 0 0 15px gray;
+} */

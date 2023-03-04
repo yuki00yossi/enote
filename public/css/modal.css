@@ -1,0 +1,30 @@
+.modal {
+    display: block;
+    position: fixed;
+    z-index: 9999;
+    width: 65vw;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0 2rem;
+    box-sizing: border-box;
+    box-shadow: 0 0 15px black;
+    background-color: whitesmoke;
+}
+
+#bgModal {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .2);
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.show {
+    visibility: visible;
+}

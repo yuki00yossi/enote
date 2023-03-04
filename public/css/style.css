@@ -1,0 +1,288 @@
+:root {
+    /* --main-bg-gradient: linear-gradient(80deg, rgba(42, 154, 255, 0.85), rgba(56, 237, 246, 0.85)); */
+    --main-bg-gradient: linear-gradient(80deg, rgba(1, 8, 75, 0.733), rgba(28, 17, 184, 0.85));
+    --main-bg-word-color: #F0F8FF;
+    --point-color: rgba(255, 168, 34, 1);
+    --body-font-size: 16px;
+    --cnt-max-width: 1280px;
+    --main-font-color: #353333;
+}
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+    font-family: "Sawarabi Gothic";
+    box-sizing: border-box;
+    background-color: #FFFAFA;
+    color: var(--main-font-color);
+}
+
+h1 {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 1.5rem;
+    font-weight: normal;
+}
+
+h3 {
+    font-size: 1.3rem;
+    font-weight: normal;
+}
+
+h4 {
+    font-size: 1.2rem;
+}
+
+p {
+    font-size: var(--body-font-size);
+}
+
+a {
+    font-size: var(--body-font-size);
+}
+
+.wrapper {
+    width: 100vw;
+    padding: 0 20vw;
+    box-sizing: border-box;
+}
+
+@media screen and (max-width: 1300px) {
+    .header,
+    .footer,
+    .contents,
+    .main {
+        padding: 0 2vw;
+    }
+}
+
+
+/* ヘッダー設定 */
+
+.header {
+    background-image: var(--main-bg-gradient);
+    color: var(--main-bg-word-color);
+    height: 3.5rem;
+    width: 100%;
+    box-shadow: 1px 1px 5px gray;
+    box-sizing: border-box;
+}
+
+.header-cnt {
+    width: 100%;
+    max-width: var(--cnt-max-width);
+    margin: 0 auto;
+    height: 100%;
+}
+
+.header-cnt::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.header-item {
+    display: block;
+    float: left;
+    height: 100%;
+    line-height: 3.5rem;
+    /* padding-top: 1rem; */
+    box-sizing: border-box;
+}
+
+.header-title {
+    margin: 0;
+}
+
+.header-link {
+    float: right;
+    padding: 0 2rem;
+    box-sizing: border-box;
+    font-style: unset;
+}
+
+.header-link a {
+    text-decoration: none;
+    color: var(--main-bg-word-color);
+    height: 100%;
+    width: 100%;
+    transition: all .2s 0s ease;
+    font-weight: bolder;
+}
+
+.header-link a:hover {
+    color: var(--point-color);
+}
+
+
+/* コンテンツ設定 */
+
+.contents {
+    box-sizing: border-box;
+    max-width: var(--cnt-max-width);
+    margin: 0 auto;
+    margin-top: 2rem;
+    min-height: calc(100vh - 16rem);
+}
+
+.contents::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.title-area {
+    margin-top: 1rem;
+}
+
+.form {
+    width: 60%;
+    margin: 0 auto;
+    padding: 2rem 5%;
+    box-sizing: border-box;
+    box-shadow: 1px 1px 3px gray;
+}
+
+.form-label {
+    padding: .3rem 0;
+}
+
+.form-input {
+    margin-bottom: .5rem;
+}
+
+.error-msg {
+    color: red;
+}
+
+.btn-main-color {
+    cursor: pointer;
+    color: var(--main-bg-word-color);
+    padding: .83rem 4rem;
+    background-image: var(--main-bg-gradient);
+    border: none;
+    box-shadow: none;
+    transition: box-shadow .2s 0s ease;
+}
+
+.btn-main-color:hover {
+    box-shadow: 2px 2px 5px gray;
+}
+
+.container::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.sidebar {
+    width: 15rem;
+    height: 100vh;
+    background-color: blue;
+    float: left;
+    box-sizing: border-box;
+}
+
+.mainblock {
+    width: calc(100% - 15rem);
+    float: left;
+    box-sizing: border-box;
+    padding: 2rem;
+}
+
+.text-center {
+    text-align: center;
+}
+
+
+/* フッター設定 */
+
+.footer {
+    width: 100%;
+    background-image: var(--main-bg-gradient);
+    box-sizing: border-box;
+    box-shadow: -1px -1px 5px gray;
+    margin-top: 2rem;
+
+    height: 8.5rem;
+}
+
+.footer-cnt {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: var(--cnt-max-width);
+    margin: 0 auto;
+    color: var(--main-bg-word-color);
+    text-align: center;
+    padding: .5rem 0;
+}
+
+.footer-copy {
+    margin-bottom: 0;
+}
+
+.footer-title {
+    text-decoration: none;
+    color: var(--main-bg-word-color);
+    font-size: 1.2rem;
+    transition: color .2s 0s ease;
+}
+
+.footer-title:hover {
+    color: var(--point-color);
+}
+
+/** はみ出した文字を...で省略する */
+.text-overflow {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+
+/** ボタン設定 */
+.btn {
+    border: none;
+    font-family: inherit;
+    font-size: 1.2rem;
+    padding: .5rem 2rem;
+    box-shadow: 1px 1px 3px gray;
+    transition: box-shadow .4s 0s ease;
+    cursor: pointer;
+}
+
+.btn:hover {
+    box-shadow: 2px 2px 5px gray;
+}
+
+.btn-accent {
+    color: var(--main-bg-word-color);
+    /* background-image: var(--main-bg-gradient); */
+    background-color: var(--point-color);
+}
+
+/** フォームの設定 **/
+.text-input {
+    padding: .25rem .5rem;
+    font-size: 1rem;
+}
+
+.btn-submit {
+    height: 2rem;
+    background-color: var(--point-color);
+    color: var(--main-bg-word-color);
+    padding: .25rem 1rem;
+    border: none;
+    box-shadow: 1px 1px 3px gray;
+    cursor: pointer;
+    transition: all .2s 0s ease-out;
+    font-size: 1rem;
+}
+
+.btn-submit:hover {
+    box-shadow: 2px 2px 5px gray;
+}
