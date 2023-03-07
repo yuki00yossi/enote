@@ -34,7 +34,7 @@ Swal.fire({
     </div>
     <div class="note-area">
         @foreach($notes as $note)
-        <div class="note-item"><a href="">{{ $note->name }}</a></div>
+        <div class="note-item"><a href="{{ route('note.show', ['note' => $note->id]) }}">{{ $note->name }}</a></div>
         @endforeach
     </div>
 </div>

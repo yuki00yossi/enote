@@ -52,4 +52,25 @@ class NoteController extends Controller
 
         return response()->json($comments);
     }
+
+    /**
+     * ノートの詳細ページを表示する
+     * 
+     * @param Request $request
+     * @param Int $note ノートID
+     */
+    public function show(Request $request, $note)
+    {
+        $m_note = Note::find($note);
+        if (null === $m_note) {
+            abort(404);
+        }
+        // dd($m_note->pages->isEmpty() ? 'aaa' : 'bbgbb');
+
+
+        return view('note/show', [
+            'user' => $request->user(),
+            'note' => $m_note,
+        ]);
+    }
 }

@@ -50,6 +50,11 @@ class Note extends Model
         return $this->belongsTo(Category::class);
     }
 
+    public function pages()
+    {
+        return $this->hasMany(Page::class);
+    }
+
     /** 
      * 所属しているユーザー
      */

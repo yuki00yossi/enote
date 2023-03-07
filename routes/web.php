@@ -32,6 +32,10 @@ Route::middleware('auth')->group(function () {
         ->where('game', '[0-9]+');
     Route::post('/game/{game}/notes', [NoteController::class, 'create'])->name('note.create')
         ->where('game', '[0-9]+');
+
+    Route::get('/note/{note}', [NoteController::class, 'show'])->name('note.show')
+        ->where('note', '[0-9]+');
+    // Route::get('/note/{note}', [])
     // Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     // Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     // Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
