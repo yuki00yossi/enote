@@ -283,6 +283,11 @@ a {
     font-size: 1rem;
 }
 
+.btn-submit-main {
+    background-image: var(--main-bg-gradient);
+    color: var(--main-bg-word-color);
+}
+
 .btn-submit:hover {
     box-shadow: 2px 2px 5px gray;
 }

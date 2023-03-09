@@ -35,6 +35,7 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/note/{note}', [NoteController::class, 'show'])->name('note.show')
         ->where('note', '[0-9]+');
+    Route::post('/note/page', [NoteController::class, 'createPage'])->name('note.addPage');
     // Route::get('/note/{note}', [])
     // Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     // Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
