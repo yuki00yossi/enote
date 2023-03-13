@@ -211,14 +211,12 @@
     width: 100%;
   }
 
-  .form-input input {
+  .form-input input, .form-input select, .form-input textarea {
     font-size: inherit;
     width: 100%;
     box-sizing: border-box;
   }
 
-  .form-input textarea {
-    font-size: inherit;
-    width: 100%;
-    box-sizing: border-box;
+  .form-input select {
+    padding: .25rem;
   }

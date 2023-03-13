@@ -14,6 +14,10 @@ use Illuminate\Database\Eloquent\Model;
 class Page extends Model
 {
     use HasFactory;
+
+    const SERVICE_TYPE = [
+        1 => 'youtube',
+    ];
    
     /**
      * The attributes that are mass assignable.

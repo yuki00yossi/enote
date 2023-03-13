@@ -7,7 +7,7 @@
 @endsection
 @section('contents')
 <div class="title-area">
-    <h2 id="noteTitle" class=""></h2>
+    <h2 id="pageTitle" class=""></h2>
 </div>
 <!-- ページ一覧 -->
 <div id="sidebar">
@@ -15,9 +15,9 @@
         <button data-micromodal-trigger="addPageModal" role="button">モーダルを開く</button>
     </div>
     @foreach ($note->pages as $page)
-    <div class="note-area" data-page-id="{{ $page->id }}" data-page-title="{{ $page->title }}" data-video-id="{{ $page->video_id }}">
-        <div class="note-title text-overflow">{{ $page->title }}</div>
-        <div class="note-updated"><small>{{ $page->updated_at }}</small></div>
+    <div class="page-area" data-page-id="{{ $page->id }}" data-page-title="{{ $page->title }}" data-video-id="{{ $page->video_id }}">
+        <div class="page-title text-overflow">{{ $page->title }}</div>
+        <div class="page-updated"><small>{{ $page->updated_at }}</small></div>
     </div>
     @endforeach
     
@@ -38,15 +38,14 @@
     <button onclick="slide(10);">１０秒進む</button>
 </div>
 @include('note.modal.add_page_modal')
-    
+
 @endsection
 
 @section('endbody')
 <script src="/js/api/Api.js"></script>
-
-<script src="/js/player/comment.js"></script>
 <script src="/js/player/youtube_api.js"></script>
 <script src="/js/player/sidebar.js"></script>
+<script src="/js/player/comment.js"></script>
 <script src="/js/player/comment_area.js"></script>
 
 <script>

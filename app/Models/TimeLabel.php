@@ -15,6 +15,8 @@ class TimeLabel extends Model
 {
     use HasFactory;
 
+    protected $table = 'time_labels';
+
     /**
      * The attributes that are mass assignable.
      *

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Game;
 use App\Models\Note;
+use App\Models\Page;
 
 class NoteController extends Controller
 {
@@ -61,8 +62,8 @@ class NoteController extends Controller
      */
     public function show(Request $request, $note)
     {
-        $m_note = Note::find($note);
-        if (null === $m_note) {
+        $note = Note::find($note);
+        if (null === $note) {
             abort(404);
         }
         // dd($m_note->pages->isEmpty() ? 'aaa' : 'bbgbb');
@@ -70,7 +71,48 @@ class NoteController extends Controller
 
         return view('note/show', [
             'user' => $request->user(),
-            'note' => $m_note,
+            'note' => $note,
+            'service_types' => Page::SERVICE_TYPE,
         ]);
     }
+
+    /**
+     * ページを作成する
+     */
+    public function createPage(Request $request, $note)
+    {
+        $validated_data = $request->validate([
+            'title' => 'required',
+            'serviceType' => 'required',
+            'videoId' => 'required',
+            'content' => 'required'
+        ]);
+        
+        Page::create([
+            'note_id' => $note,
+            'service_type' => $validated_data['serviceType'],
+            'video_id' => $validated_data['videoId'],
+            'title' => $validated_data['title'],
+            'user_id' => $request->user()->id
+        ]);
+
+        return redirect()->route('note.show', ['note' => $note])->with('addPage', true);
+    }
+
+    /**
+     * ページを削除する
+     */
+    public function deletePage(Request $request, $note ,$page)
+    {
+        $note = Note::find($note);
+        $page = Page::find($page);
+
+        if ($note->user_id === $request->user()->id &&
+            $page->user_id === $request->user()->id 
+        ) {
+            $page->delete();
+        }
+        return false;
+    }
 }
+

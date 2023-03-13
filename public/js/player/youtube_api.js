@@ -174,8 +174,9 @@ window.addEventListener('resize', () => {
 // 初期化処理
 const tag = document.createElement('script');
 tag.src = "https://www.youtube.com/iframe_api";
-const firstScriptTag = document.getElementsByTagName('script')[0];
-firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+// const firstScriptTag = document.getElementsByTagName('script')[0];
+document.body.appendChild(tag);
+// firstScriptTag.parentNode.appendChild(tag, firstScriptTag);
 
 document.getElementById('sidebar').style = "height: " + size.height + "px;";
 document.getElementById('comment_area').style = "height: " + size.height + "px;";

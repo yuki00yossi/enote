@@ -1,6 +1,6 @@
-class NoteComment
+class PageComment
 {
-    base_url = 'http://localhost/api/note/';
+    base_url = 'http://localhost/api/page/';
     constructor(noteId)
     {
         this.base_url = this.base_url + noteId + '/comment';

@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\NoteController;
+use App\Http\Controllers\PageController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -20,5 +21,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::middleware('auth:sanctum')->group(function () {
-    Route::get('/note/{note}/comment', [NoteController::class, 'get_comment'])->name('note.comment')->where('note', '[0-9]+');
+    Route::get('/page/{page}/comment', [PageController::class, 'get_comment'])->name('page.comment')
+        ->where('page', '[0-9]+');
+
 });

@@ -27,14 +27,6 @@ class Note extends Model
     ];
 
     /** 
-     * 関連するタイムラベル
-     */
-    public function note_time_label()
-    {
-        return $this->hasMany(NoteTimeLabel::class);
-    }
-
-    /** 
      * 所属しているゲーム
      */
     public function game()

@@ -1,7 +1,7 @@
-let noteItems = document.getElementsByClassName('note-area');
+let pageItems = document.getElementsByClassName('page-area');
 
 /**
- * ノートをクリックしたときの処理
+ * ページをクリックしたときの処理
  * 以下処理を行う
  * 
  * 1. 動画を再読み込み
@@ -9,7 +9,7 @@ let noteItems = document.getElementsByClassName('note-area');
  * 
  * @param {Event} e 
  */
-async function clickNote(e)
+async function clickPage(e)
 {
     e.currentTarget.classList.add('selected');
     resetPlayer();
@@ -17,14 +17,14 @@ async function clickNote(e)
     const videoId = e.currentTarget.dataset.videoId;
     setupYTPlayer(videoId);
     
-    for (let i = 0; i < noteItems.length; i++) {
-        if (noteItems[i].classList.contains('selected')) {
-            noteItems[i].classList.remove('selected');
+    for (let i = 0; i < pageItems.length; i++) {
+        if (pageItems[i].classList.contains('selected')) {
+            pageItems[i].classList.remove('selected');
         }
     }
 
-    const note = new NoteComment(e.currentTarget.dataset.noteId);
-    const comments = await note.getComments();
+    const page = new PageComment(e.currentTarget.dataset.pageId);
+    const comments = await page.getComments();
     resetTimeLabel();
     addTimeLabel(comments);
 }
@@ -129,10 +129,10 @@ function resetPlayer()
 /** ノートのタイトルを再設定する */
 function setTitle(e)
 {
-    const title = e.currentTarget.dataset.noteTitle;
-    document.getElementById('noteTitle').innerText = title;
+    const title = e.currentTarget.dataset.pageTitle;
+    document.getElementById('pageTitle').innerText = title;
 }
 
-for (let i = 0; i < noteItems.length; i++) {
-    noteItems[i].addEventListener('click', clickNote);
+for (let i = 0; i < pageItems.length; i++) {
+    pageItems[i].addEventListener('click', clickPage);
 }
